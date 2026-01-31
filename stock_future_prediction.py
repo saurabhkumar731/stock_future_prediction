@@ -53,7 +53,7 @@ if not st.session_state.logged_in:
 
 # ================== LOAD LSTM MODEL ==================
 try:
-    lstm_model = load_model("C:/Users/Saurabh/Desktop/stock_website/lstm_stock_model.keras")
+    lstm_model = load_model("lstm_stock_model.keras")
 except:
     lstm_model = None
     st.warning("⚠️ LSTM model file not found. Please ensure 'lstm_stock_model.keras' is available.")
@@ -251,3 +251,4 @@ elif viz_option == "Correlation Heatmap":
     sns.heatmap(data[["Open", "High", "Low", "Close", "Volume"]].corr(),
                 annot=True, cmap="coolwarm", ax=ax)
     st.pyplot(fig)
+
